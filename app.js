@@ -122,17 +122,17 @@ app.get('/user_login', (req, res) => {
     const { p_name, p_price, p_del_price, category } = req.body;
     const p_id = generateRandomId();
     let cate; // Declare cate variable outside if-else blocks
-    if(category=='Men')
+    if(category=='Fiction')
     {
-         cate='Men';
+         cate='Fiction';
     }
-    else if(category=='Women')
+    else if(category=='Biography')
     {
-        cate='Women';
+        cate='Biography';
     }
     else
     {
-        cate='Kids';
+        cate='Adventure';
     }
     const insertQuery = "INSERT INTO product (p_id, p_name, p_price, p_del_price, p_image,cate) VALUES (?, ?, ?, ?, ?,?)";
 
