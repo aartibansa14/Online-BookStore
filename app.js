@@ -249,8 +249,8 @@ app.get('/index', requireAuth, (req, res) => {
  
 const Razorpay = require('razorpay');
 const rzp = new Razorpay({
-    key_id: 'rzp_test_k7kh7mgazaRlL6', 
-   key_secret: 'ebffCutFTFetb4COrPmFywwM'  
+    key_id: 'Your Key ID', 
+   key_secret: 'Your Secret Key'  
 });
 
 
