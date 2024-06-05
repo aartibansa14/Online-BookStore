@@ -1,0 +1,512 @@
+#cart
+{
+    display: flex;
+    margin-top: -63px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#cart_1
+{
+   
+    width: 660px;
+    margin-left: 80px;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 40px;
+    background-color: white;
+    
+}
+.row-1
+{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'roboto';
+    font-size: 16px;
+   padding-top: 20px;
+   padding-bottom: 20px;
+    align-items: center;
+    height: 55px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: #2a55e5;
+}
+#row-2
+{
+    font-family: 'roboto';
+    margin-top: 10px;
+    color: #111112;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   font-size: 14px;
+    height: 55px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+.row-3
+{
+    margin-top: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 385px;
+}
+
+.image
+{
+    width: 222px;
+    height: 162px;
+    display: flex;
+   margin: 0 auto;
+   position: relative;
+   top:40px;
+}
+.h1
+{
+    font-size: 18px;
+    font-family: 'poppins';
+    font-weight: normal;
+    color: hsl(203, 30%, 26%);
+    margin-top: 70px;
+    text-align: center;
+
+}
+.h2
+{
+    font-size: 14px;
+    font-family: 'poppins';
+    font-weight: normal;
+    color: #20b2aa;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.row_4
+{
+   
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   
+    display: flex;
+    border-bottom: 1px solid #f0f0f0!important;
+    
+}
+
+.big_img
+{
+    width: 100px;
+    height: 140px;
+    margin: 30px;
+    margin-left: 60px;
+}
+.wo
+{
+    margin-top: 40px;
+}
+
+.defi
+{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    color: #212121;
+    
+}
+.color
+{
+    font-size: 14px;
+    color: #878787;
+    font-family: 'roboto';
+    margin-top: 5px;
+}
+
+.pri
+{
+    display: flex;
+    
+    justify-content:space-between;
+  
+}
+.deleted_price
+{
+    font-size: 14px;
+    color: #878787;
+    font-family: 'roboto';
+    padding-left: 10px;
+}
+.price
+{
+    font-size: 18px;
+    color: #212121;
+    font-weight: 600;
+    font-family: 'roboto';
+    margin-top: -3px;
+   
+}
+.of
+{
+    color: #20b2aa;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: cursive;
+    padding-left: 10px;
+}
+.bt
+{
+    
+    margin-top: 5px;
+    position: relative;
+    left: 50px;
+    bottom: 50px;
+    border: 1px solid #c27a7e;
+    background-color: #c27a7e;
+    color: white;
+    padding: 10px 20px;
+    transition: 0.25s ease;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 3px 3px hsl(304, 14%, 46%);
+}
+
+.small_img
+{
+    width: 100px;
+    height: 25px;
+    margin-top: 10px;
+}
+
+#cart_2
+{
+    margin-top: 20px;
+    width: 437px;
+    height:310px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-left: 15px;
+    margin-right: 12px;
+    padding-bottom: 40px;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cart_footer
+{
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid #f0f0f0!important;
+    text-align: center;
+    align-items: center;
+    height: 80px;
+   
+}
+.cart_footer .sp
+{
+    font-family: 'roboto';
+    color: #565656;
+    font-size: 14px;
+}
+.cart_footer p
+{
+    font-family: 'roboto';
+    color: #565656;
+    font-size: 14px; 
+}
+.cart_footer .hc
+{
+    color: #2874f0;
+}
+.ab08
+{
+    padding-left: 25px;
+}
+
+#cart_2 h1
+{
+    color: black;
+    font-size: 16px;
+   padding: 13px 24px;
+   border-bottom: 1px solid #f0f0f0!important;
+}
+.div_1
+{
+    padding: 13px 24px;
+    border-bottom: 1px dashed #f0f0f0!important;
+}
+.di_1
+{
+    display: flex;
+    justify-content: space-between;
+   
+}
+.charge
+{
+    font-size: 16px;
+    color: #212121;
+    font-weight: normal;
+    padding: 10px;
+    padding-left: 0px;
+}
+.price_total
+{
+    font-size: 16px;
+    color: #212121;
+    font-weight: normal;
+}
+.dis_tot
+{
+    font-size: 16px;
+    color: #20b2aa;
+    font-weight: normal;
+    padding-top: 5px;
+}
+
+.div_2
+{   
+    display: flex;
+    padding: 13px 24px;
+    justify-content: space-between;
+    border-bottom: 1px dashed #f0f0f0!important;
+}
+.div_2 p
+{
+    font-size: 18px;
+    color: #212121;
+    font-weight: 600;
+}
+
+.div_3
+{
+    padding: 30px 26px;
+    color: grey;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+
+
+.btn
+{
+    margin-left: 160px;
+    height: 30px;
+    margin-top: -10px;
+    padding: 10px;
+    padding-bottom: 25px;
+    background-color: hsl(5, 100%, 73%);
+    color: white;
+    border: none;
+    border-radius: 30px;
+}
+
+#checkoutBtn
+{
+    position: absolute;
+    bottom: 10px;
+    margin-left: 160px;
+    border: 1px solid #c27a7e;
+    background-color: #c27a7e;
+    color: white;
+    padding: 10px 20px;
+    transition: 0.25s ease;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 3px 3px hsl(304, 14%, 46%);
+}
+
+
+
+
+
+.place_form
+{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.form-1 input
+{
+    height: 30px;
+    width: 310px;
+    margin-bottom: 10px;
+    padding: 7px;
+}
+.form-2 input
+{
+    height: 30px;
+    width: 200px;
+    padding: 7px;
+}
+
+.form-3 
+{
+    margin-top: 20px;
+    margin-left: 20px;
+    
+}
+
+.form-3 input
+{
+    margin-top: 10px;
+    
+    
+}
+
+.total
+{
+    margin-top: 90px;
+    text-align: center;
+}
+
+
+
+
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 100px;
+}
+
+
+.close {
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    cursor: pointer;
+
+}
+
+
+
+
+
+
+#total button {
+  
+    position: relative;
+    left: 580px;
+    bottom: 20px;
+    border: 1px solid #c27a7e;
+    background-color: #c27a7e;
+    color: white;
+    padding: 10px 20px;
+    transition: 0.25s ease;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 3px 3px hsl(304, 14%, 46%)
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: 'roboto';
+    height: 30px;
+    margin-top: 20px;
+   
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    
+}
+
+
+
+.amt  {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.b_details  {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: none;
+}
+
+
+.place_form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+
+p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'roboto';
+}
+
+.ca
+{
+    position: relative;
+    top: -22px;
+    left: 20px;
+    font-family: 'poppins', sans-serif;
+}
+
+.mo
+{
+    color: #2e4756;
+    font-size: 20px;
+}
+
+
+
+@media only screen and (max-width: 1024px)
+{
+  #total button
+  {
+    position: relative;
+    left: 460px;
+  }
+}
+
+
+@media only screen and (max-width: 768px)
+{
+  #total button
+  {
+    position: relative;
+    left: 330px;
+  }
+}
+
+
+
+

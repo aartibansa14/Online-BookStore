@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link rel="stylesheet" href="../public/shop.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo" onclick="openhome()">ShopiFy</div>
+            <input type="text" id="txtSearch" placeholder="Search Product..." onkeyup="search()" />
+            <h3>Category</h3>
+            <ul class="category-list">
+                <li data-category="all">All</li>
+                <li data-category="Men">Men</li>
+                <li data-category="Women">Women</li>
+                <li data-category="Kids">Kids</li>
+            </ul>
+            <h3>Price Range</h3>
+            <div class="price">
+                <input type="range" id="priceRange" />
+                <span class="priceValue">500</span>
+                
+            </div>
+        </div>
+        <div class="content">
+            <div class="products" id="product-list">
+                {{#each books}}
+                <div class="product" data-category="{{this.category}}">
+                    <div class="img">
+                        <img src="data:image/jpeg;base64,{{this.p_image}}" alt="${this.name}" />
+                    </div>
+                    <div class="product-details">
+                        <h2 class="name" style="display: none;">{{this.cate}}</h2>
+                        <h3 class="names">{{this.p_name}}</h3>
+                        <span class="amt">Rs.{{this.p_price}}</span>
+                        <del class="seller">Rs.{{this.p_del_price}}</del>
+                        <a href="../cart"> <button class="button"
+              onclick="addToCart('{{this.p_id}}', '{{this.p_name}}', {{this.p_price}}, '{{this.p_image}}',{{this.p_del_price}})">Add
+              to Cart</button></a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <script src="../js/shop.js"></script>
+    
+</body>
+
+</html>
+

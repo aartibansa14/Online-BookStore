@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Cart</title>
+  <meta name="title" content="Bookish - Read More And Make Success">
+  <meta name="description"
+    content="Read More And Make Success The Result Of Perfection. - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad harum quibusdam, assumenda quia explicabo.">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../public/style.css">
+  <link rel="stylesheet" href="../public/cart.css">
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload image
+  -->
+  <link rel="preload" as="image" href="../images/hero-banner.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">ShopiFy</a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="../index" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="../shop" class="navbar-link" data-nav-link>Shop</a>
+          </li>
+
+
+
+
+
+          <!--<li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Account</a>
+
+          </li>-->
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" onclick="toggleDropdown()">Account</a>
+            <div class="dropdown-content" id="accountDropdown" style="display: none;">
+              <!-- Add your dropdown menu items here -->
+              <a href="../profile">Profile</a>
+              <a href="../order">My Order</a>
+              <a href="#">Logout</a>
+            </div>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="../cart" class="navbar-link" data-nav-link><i class="fa fa-shopping-cart"></i></a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true" class="open"></ion-icon>
+
+        <ion-icon name="close-outline" aria-hidden="true" class="close"></ion-icon>
+      </button>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" id="home" aria-label="home">
+        <div id="cart">
+          <div id="cart_1">
+
+
+          </div>
+          <div id="cart_2">
+            <h1>PRICE DETAILS</h1>
+          </div>
+        </div>
+
+
+        <div id="full">
+          <div class="total" id="total">
+            <a href="../profile" onclick="openPopup()"><button>Your Info</button></a>
+
+
+          </div>
+
+
+          <div class="place_form" id="place_form">
+            <form action="/cart" method="post" id="your-form-id">
+
+              <p class="mo">Payment Mode:</p>
+
+              <label>
+                <input type="radio" name="pay_type" class="pay" id="cash" value="cash" onclick="submitForm()"><p class="ca">cash</p>
+              </label>
+              <label>
+                <input type="radio" name="pay_type" class="pay" id="pay" value="online"><p class="ca">online</p>
+              </label>
+
+          </div>
+
+
+
+          </form>
+        </div>
+        </div>
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- 
+    - custom js link
+  -->
+      <script src="../js/script.js" defer></script>
+      <script src="../js/cart.js"></script>
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+      <!-- 
+    - ionicon link
+  -->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

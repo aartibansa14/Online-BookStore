@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../public/pro.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bx-book"></i>
+      <span class="logo_name">BOOKSTORE</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="../admin" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="../product">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Add_Book</span>
+          </a>
+        </li>
+        <li>
+          <a href="../admin_order">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Order list</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Message</span>
+          </a>
+        </li>
+        <li>
+          <a href="../admin_users">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Users</span>
+          </a>
+        </li>
+        
+      </ul>
+  </div>
+
+<div class="form">
+<h4>Update Book Details</h4> 
+<form action="/update-book/{{book.p_id}}" method="post">
+    <input type="text" name="p_name" placeholder="Enter Product Name"  id="inputText" onkeyup="capitalizeFirstLetter()" required value="{{book.p_name}}">
+    <br>
+    <input type="number" name="p_price" placeholder="Enter Price" required value="{{book.p_price}}">
+    <br>
+    <input type="number" name="p_del_price" placeholder="Enter Delete Price" required value="{{book.p_del_price}}">
+    <br>
+
+    <button>Update</button>
+</form>
+</div>
+</body>
+<script>
+  function capitalizeFirstLetter() {
+    // Get the input element
+    const inputElement = document.getElementById("inputText");
+
+    // Get the current input value
+    let inputValue = inputElement.value;
+
+    // Check if there's at least one character
+    if (inputValue.length > 0) {
+        // Capitalize the first letter
+        inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
+    }
+
+    // Update the input value with the capitalized text
+    inputElement.value = inputValue;
+}
+</script>
+</html>

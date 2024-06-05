@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 
+    - primary meta tags
+  -->
+    <title>ShopiFy</title>
+    <meta name="title" content="Bookish - Read More And Make Success">
+    <meta name="description" content="Read More And Make Success The Result Of Perfection. - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad harum quibusdam, assumenda quia explicabo.">
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="../public/style.css">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- 
+    - preload image
+  -->
+    <link rel="preload" as="image" href="../images/lock.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="#" class="logo">ShopiFy</a>
+
+            <nav class="navbar" data-navbar>
+                <ul class="navbar-list">
+
+                    <li class="navbar-item">
+                        <a href="../index" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="../shop" class="navbar-link" data-nav-link>Shop</a>
+                    </li>
+
+
+                   
+
+                    <li class="navbar-item">
+                        <a href="../index/#contact" class="navbar-link" data-nav-link>Contact</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link" onclick="toggleDropdown()">Select</a>
+                        <div class="dropdown-content" id="accountDropdown" style="display: none;">
+                            <!-- Add your dropdown menu items here -->
+                            <a href="../admin_login">Admin</a>
+                            <a href="../user_login">User</a>
+                        </div>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="../cart" class="navbar-link" data-nav-link><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+
+                    
+
+                </ul>
+            </nav>
+
+            <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true" class="open"></ion-icon>
+
+                <ion-icon name="close-outline" aria-hidden="true" class="close"></ion-icon>
+            </button>
+
+        </div>
+    </header>
+
+
+
+
+
+    <main>
+        <article>
+
+          
+
+            <section class="section hero" id="home" aria-label="home">
+                <div class="container">
+
+                    <div class="hero-content">
+
+                        <p class="section-subtitle">Welcome to ShopiFy</p>
+
+                        <h1 class="h1 hero-title">To Continue Your Shopping, First Login/Signup.</h1>
+
+                        
+
+                    </div>
+
+                    <div class="hero-banner has-before">
+                        <img src="../images/lock.jpg" width="431" height="596"
+                            alt="things i never said, a novel by claudia wilson" class="w-100">
+
+                        <button class="play-btn" aria-label="play video">
+                            <ion-icon name="play-outline" aria-hidden="true"></ion-icon>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+
+        </article>
+    </main>
+
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="../js/script.js" defer></script>
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

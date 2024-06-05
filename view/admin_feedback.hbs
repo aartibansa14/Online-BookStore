@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/admin_order.css">
+    <link rel="stylesheet" href="../public/admin.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+     
+    <title>User Feedback/Contact</title>
+</head>
+<body>
+    
+<div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bx-cart"></i>
+      <span class="logo_name">ShopiFy</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="../admin" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="../product">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Add_Item</span>
+          </a>
+        </li>
+        <li>
+          <a href="../admin_order">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Order list</span>
+          </a>
+        </li>
+        <li>
+          <a href="../admin_feedback">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Feedback</span>
+          </a>
+        </li>
+        <li>
+          <a href="../admin_users">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Users</span>
+          </a>
+        </li>
+        
+      </ul>
+  </div>
+
+  <div class="order">
+    {{#each books}}
+    <div class="book-1">
+         
+            
+            <h1>USER ID: {{this.u_id}}</h1>
+            <h1>NAME: {{this.name}}</h1>
+            <h1>EMAIL: {{this.email}}</h1>
+            <h1>MESSAGE: {{this.message}}</h1>
+            
+           
+    </div>
+    {{/each}}
+  </div>
+  
+
+  
+
+</body>
+</html>

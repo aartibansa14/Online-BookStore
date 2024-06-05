@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 
+    - primary meta tags
+  -->
+    <title>ShopiFy</title>
+    <meta name="title" content="Bookish - Read More And Make Success">
+    <meta name="description"
+        content="Read More And Make Success The Result Of Perfection. - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad harum quibusdam, assumenda quia explicabo.">
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="../public/style.css">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- 
+    - preload image
+  -->
+    <link rel="preload" as="image" href="../images/hero-banner.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="#" class="logo">ShopiFy</a>
+
+            <nav class="navbar" data-navbar>
+                <ul class="navbar-list">
+
+                    <li class="navbar-item">
+                        <a href="#home" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="../shop" class="navbar-link" data-nav-link>Shop</a>
+                    </li>
+
+
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link" onclick="toggleDropdown()">Account</a>
+                        <div class="dropdown-content" id="accountDropdown" style="display: none;">
+                            <!-- Add your dropdown menu items here -->
+                            <a href="../profile">Profile</a>
+                            <a href="../order">My Order</a>
+                            <a href="#" id="logout-heart">Logout</a>
+                        </div>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="../cart" class="navbar-link" data-nav-link><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true" class="open"></ion-icon>
+
+                <ion-icon name="close-outline" aria-hidden="true" class="close"></ion-icon>
+            </button>
+
+        </div>
+    </header>
+
+
+
+
+
+    <main>
+        <article>
+
+            <!-- 
+        - #HERO
+      -->
+
+            <section class="section hero" id="home" aria-label="home">
+                <div class="container">
+
+                    <div class="hero-content">
+
+                        <p class="section-subtitle">Welcome to ShopiFy</p>
+
+                        <h1 class="h1 hero-title">Shop our collection for style,and comfort. </h1>
+
+                        <p class="section-text">
+                            Discover endless possibilities for your home. Shop our curated collection for style, comfort, and convenience. Elevate your space effortlessly.
+                        </p>
+
+                    </div>
+
+                    <div class="hero-banner has-before">
+                        <img src="../images/hero-banner.png" width="431" height="596"
+                            alt="things i never said, a novel by claudia wilson" class="w-100">
+
+                        <button class="play-btn" aria-label="play video">
+                            <ion-icon name="play-outline" aria-hidden="true"></ion-icon>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
+
+            <!-- 
+        - #BENEFITS
+      -->
+
+            <section class="section benefits" id="benefits" aria-label="benefits">
+                <div class="container">
+
+                    <div class="grid-list">
+
+                        <li class="benefits-content">
+                            <h2 class="h2 section-title">Our Colletion</h2>
+
+                            <p class="section-text">Discover Amazing deals with ShopiFy.</p>
+                        </li>
+
+                        {{#each books}}
+                        <li>
+
+                            <div class="benefits-card has-before has-after">
+
+                                <div class="card-icon">
+                                    <img src="data:image/jpeg;base64,{{this.p_image}}" width="200" height="250"
+                                        loading="lazy" alt="Experience">
+                                </div>
+
+                                <h3 class="h3 card-title">{{this.p_name}}</h3>
+
+                                <p class="card-text">
+                                    $ {{this.p_price}}
+                                </p>
+
+                                <a href="#" class="btn-link">
+                                    <del class="span">$ {{this.p_del_price}}</del>
+
+
+                                </a>
+
+                            </div>
+
+                        </li>
+                        {{/each}}
+
+
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
+
+
+            <!-- 
+        - #AUTHOR
+      -->
+
+            <section class="section author" id="author">
+                <div class="container">
+
+                    <figure class="author-banner img-holder" style="--width: 700; --height: 720;">
+                        <img src="../images/author-banner.png" width="700" height="720" loading="lazy"
+                            alt="Martin Jenny" class="img-cover">
+                    </figure>
+
+                    <div class="author-content">
+
+                        <p class="section-subtitle">About</p>
+
+                        <h2 class="h2 section-title">ShopiFy</h2>
+
+
+
+                        <div class="section-text">
+
+                            we've crafted a seamless shopping experience just for you. Say goodbye to complicated
+                            checkout processes and endless
+                            scrolling—our user-friendly website makes it easy for you to find and purchase your favorite
+                            products with just a few clicks.
+
+
+
+                            Once you've found the perfect product, simply add it to your cart and proceed to our secure
+                            checkout. With multiple payment options.
+
+
+                            So why wait? Start exploring our website today and discover the joy of effortless shopping
+                            at [Your Store Name]. Your satisfaction is our priority, and we can't wait to help you find
+                            exactly what you're looking for.
+                            <br>
+                            Happy shopping!
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+
+            <!-- 
+        - #CONTACT
+      -->
+
+            <section class="section contact" id="contact" aria-label="contact">
+                <div class="container">
+
+                    <p class="section-subtitle">Contact</p>
+
+                    <h2 class="h2 section-title has-underline">
+                        Write me anything
+                        <span class="span has-before"></span>
+                    </h2>
+
+                    <div class="wrapper">
+
+                        <form action="" class="contact-form" method="post">
+                            <input type="text" name="u_id" value="{{user.u_id}}" required class="input-field">
+
+                            <input type="text" name="name" placeholder="Your Name" required class="input-field">
+
+                            <input type="email" name="email" placeholder="Your Email" required
+                                class="input-field">
+
+                            
+                            <textarea name="message" placeholder="Your Message" class="input-field"></textarea>
+
+                            <button type="submit" class="btn btn-primary">Send Now</button>
+
+                        </form>
+
+                        <ul class="contact-card">
+
+                            <li>
+                                <p class="card-title">Address:</p>
+
+                                <address class="address">
+                                    16, Lankaway <br>
+                                    Florida, USA 99544
+                                </address>
+                            </li>
+
+                            <li>
+                                <p class="card-title">Phone:</p>
+
+                                <a href="tel:1234567890" class="card-link">123 456 7890</a>
+                            </li>
+
+                            <li>
+                                <p class="card-title">Email:</p>
+
+                                <a href="mailto:support@support.com" class="card-link">support@support.com</a>
+                            </li>
+
+                            <li>
+                                <p class="social-list-title h3">Connect socials</p>
+
+                                <ul class="social-list">
+
+                                    <li>
+                                        <a href="#" class="social-link">
+                                            <ion-icon name="logo-facebook"></ion-icon>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="social-link">
+                                            <ion-icon name="logo-twitter"></ion-icon>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="social-link">
+                                            <ion-icon name="logo-linkedin"></ion-icon>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="social-link">
+                                            <ion-icon name="logo-youtube"></ion-icon>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="social-link">
+                                            <ion-icon name="logo-whatsapp"></ion-icon>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+
+
+
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-top">
+
+                <a href="#" class="logo">ShopiFy</a>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <a href="#" class="footer-link">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="../shop" class="footer-link">Shop</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </li>
+
+                    <li>
+                        <a href="../cart" class="footer-link">Cart</a>
+                    </li>
+
+                    <li>
+                        <a href="#author" class="footer-link">About</a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2024 All right reserved. Made with ❤ by codewithsadee.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="../js/script.js" defer></script>
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const heartIcon = document.getElementById("logout-heart");
+
+    if (heartIcon) {
+      heartIcon.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        // Send an AJAX request to the logout endpoint
+        fetch('/logout', {
+          method: 'GET',
+        })
+          .then(response => {
+            if (response.ok) {
+              // Redirect the user to the home page after logout
+              window.location.href = '/landing';
+            } else {
+              console.error('Logout failed');
+            }
+          })
+          .catch(error => {
+            console.error('Logout failed:', error);
+          });
+      });
+    }
+  });
+
+</script>
+
+</html>

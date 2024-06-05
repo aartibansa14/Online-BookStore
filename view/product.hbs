@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!--custom css file link-->
+  <link rel="stylesheet" href="../public/pro.css">
+  <link rel="stylesheet" href="../public/admin.css">
+  <title>Add Product, Update ,Delete</title>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bx-cart"></i>
+      <span class="logo_name">ShopiFy</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="../admin" class="active">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="../product">
+          <i class='bx bx-box'></i>
+          <span class="links_name">Add_Item</span>
+        </a>
+      </li>
+      <li>
+        <a href="../admin_order">
+          <i class='bx bx-list-ul'></i>
+          <span class="links_name">Order list</span>
+        </a>
+      </li>
+      <li>
+        <a href="../admin_feedback">
+          <i class='bx bx-message'></i>
+          <span class="links_name">Feedback</span>
+        </a>
+      </li>
+      <li>
+        <a href="../admin_users">
+          <i class='bx bx-user'></i>
+          <span class="links_name">Users</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="form">
+    <h4>Add Product</h4>
+    <form action="" method="post" enctype="multipart/form-data">
+      <h1>Select Category</h1>
+      <label>
+        <input type="radio" name="category" id="Men" value="Men" required="">Men
+      </label>
+      <label>
+        <input type="radio" name="category" id="Women" value="Women">Women
+      </label>
+      <label>
+        <input type="radio" name="category" id="Kids" value="Kids">Kids
+      </label>
+      
+
+      <input type="text" name="p_name" placeholder="Enter Product Name" id="inputText" onkeyup="capitalizeFirstLetter()"
+        required="">
+      <br>
+      <input type="number" name="p_price" placeholder="Enter Price" required="">
+      <br>
+      <input type="number" name="p_del_price" placeholder="Enter Delete Price" required="">
+      <br>
+      <input type="file" name="p_image" class="file" required="">
+      <br>
+      <button>Add</button>
+    </form>
+  </div>
+
+  <div class="item">
+    {{#each books}}
+    <div class="book-1">
+      <img src="data:image/jpeg;base64,{{this.p_image}}" width="170px" height="250px">
+      <p>{{this.cate}}</p>
+      <p>{{this.p_name}}</p>
+      <price>₹{{this.p_price}}</price>
+      <del>₹{{this.p_del_price}}</del>
+      <br>
+
+
+      <a href="/update-book/{{this.p_id}}"><button class="update">update</button></a>
+      <button class="delete" data-p_id="{{this.p_id}}">Delete</button>
+
+
+    </div>
+    {{/each}}
+  </div>
+  <script src="../js/pro.js"></script>
+</body>
+
+</html>

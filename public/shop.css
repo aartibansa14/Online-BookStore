@@ -1,0 +1,155 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.container {
+  background-color: #fff;
+  width: 95%;
+  margin: 0 auto;
+  min-height: 1000px;
+  display: flex;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #f5ebe5;
+  padding: 10px;
+  margin-top: 49px;
+  height: 350px;
+}
+.logo {
+  font-weight: 800;
+  font-size: 25px;
+  color: #2E4756;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-family: 'Philosopher', sans-serif;
+}
+.sidebar input[type="text"] {
+  padding: 5px 5px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.sidebar h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar ul li {
+  margin: 5px 0;
+  padding-left: 5px;
+  cursor: pointer;
+}
+.sidebar ul li:hover {
+  background-color: #dcdde1;
+}
+.content {
+  flex: 4;
+  margin-top: 40px;
+  margin-left: 80px;
+}
+
+.products {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 10px;
+  cursor: pointer;
+
+}
+.product {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  overflow: hidden;
+  border-bottom: 2px solid hsl(304, 14%, 46%);;
+  border-right: 2px solid hsl(304, 14%, 46%);;
+  /*box-shadow: 5px 5px hsl(304, 14%, 46%);*/
+  
+}
+
+.product .img {
+  flex: 1;
+}
+.product .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.5s;
+  transform: scale(0.75);
+}
+.product:hover img {
+  transform: scale(1);
+}
+.product .product-details {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-details span:nth-child(1) {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.product-details span:nth-child(2) {
+  color: #2980b9;
+  font-weight: 600;
+}
+
+.product-details span:nth-child(3) {
+  font-size: 11px;
+  font-weight: 600;
+  color: #16a085;
+}
+
+.button
+{
+   border: 1px solid #c27a7e;
+   background-color: #c27a7e;
+    color: white;
+    padding: 10px 20px;
+    transition: 0.25s ease;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 3px 3px hsl(304, 14%, 46%);
+}
+.button:hover
+{
+  background-color: hsl(304, 14%, 46%);
+}
+
+
+/* for drodown*/
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}

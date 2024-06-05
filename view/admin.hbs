@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> ADMIN PANEL </title>
+    <link rel="stylesheet" href="../public/admin.css">
+    
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link
+        href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bx-cart"></i>
+      <span class="logo_name">ShopiFy</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="../admin" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="../product">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Add_Item</span>
+          </a>
+        </li>
+        <li>
+          <a href="../admin_order">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Order list</span>
+          </a>
+        </li>
+        <li>
+          <a href="../admin_feedback">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Feedback</span>
+          </a>
+        </li>
+         <li>
+          <a href="../admin_users">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Users</span>
+          </a>
+        </li>
+
+        <li>
+           <a href="#" id="heart"><i class="fa fa-power-off" id="logout-heart"></i>
+            <span class="links_name" id="span">Log Out</span>
+          </a>
+        </li>
+        
+        
+      </ul>
+
+      
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <img src="../image/profile.jpeg" alt="">
+         {{#each books}}
+        <span class="admin_name">{{this.a_name}}</span>
+        {{/each}}
+      </div>
+    </nav>
+
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Order</div>
+            <div class="number">{{ orderCount  }}</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <a href="../admin_order"><span class="text">View</span></a>
+            </div>
+          </div>
+          <i class='bx bx-cart-alt cart'></i>
+        </div>
+        
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Users</div>
+            <div class="number">{{ userCount }}</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <a href="../admin_users"><span class="text">View</span></a>
+            </div>
+          </div>
+          <i class='bx bx-user cart three' ></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Product</div>
+            <div class="number">{{ bookCount  }}</div>
+            <div class="indicator">
+              <i class='bx bx-down-arrow-alt down'></i>
+             <a href="../product"><span class="text">View</span></a>
+            </div>
+          </div>
+          <i class='bx bxs-book cart four' ></i>
+        </div>
+      <!--  <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Complete Order</div>
+            <div class="number">{{completedOrderCount}}</div>
+            <div class="indicator">
+              <i class='bx bx-down-arrow-alt down'></i>
+             <a href="../admin_order"><span class="text">View</span></a>
+            </div>
+          </div>
+          <i class='bx bxs-cart-download cart four' ></i>
+        </div>
+
+         <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Pending Order</div>
+            <div class="number">{{pendingOrderCount}}</div>
+            <div class="indicator">
+              <i class='bx bx-down-arrow-alt down'></i>
+             <a href="../admin_order"><span class="text">View</span></a>
+            </div>
+          </div>
+          <i class='bx bxs-cart-download cart four' ></i>
+        </div>-->
+      </div>
+
+      
+
+      
+        
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const heartIcon = document.getElementById("span");
+
+    if (heartIcon) {
+        heartIcon.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // Send an AJAX request to the logout endpoint
+            fetch('/logout', {
+                method: 'GET',
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect the user to the home page after logout
+                    window.location.href = '/landing';
+                } else {
+                    console.error('Logout failed');
+                }
+            })
+            .catch(error => {
+                console.error('Logout failed:', error);
+            });
+        });
+    }
+});
+
+ </script>
+</html>

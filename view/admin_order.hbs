@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/admin_order.css">
+  <link rel="stylesheet" href="../public/admin.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <title>Orders</title>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bx-cart"></i>
+      <span class="logo_name">ShopiFy</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="../admin" class="active">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="../product">
+          <i class='bx bx-box'></i>
+          <span class="links_name">Add_Item</span>
+        </a>
+      </li>
+      <li>
+        <a href="../admin_order">
+          <i class='bx bx-list-ul'></i>
+          <span class="links_name">Order list</span>
+        </a>
+      </li>
+      <li>
+        <a href="../admin_feedback">
+          <i class='bx bx-message'></i>
+          <span class="links_name">Feedback</span>
+        </a>
+      </li>
+      <li>
+        <a href="../admin_users">
+          <i class='bx bx-user'></i>
+          <span class="links_name">Users</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="order">
+    {{#each books}}
+    <div class="book-1">
+
+      
+        <h1>STATUS: {{this.status}}</h1>
+      <h1>ORDER_ID: {{this.or_id}}</h1>
+      <h1>USER ID: {{this.u_id}}</h1>
+      <h1>USERNAME: {{this.u_name}}</h1>
+      <h1>ADDRESS: {{this.u_address}}</h1>
+      <h1>PINCODE: {{this.pincode}}</h1>
+      <h1>STATE: {{this.state}}</h1>
+      <h1>CITY: {{this.u_city}}</h1>
+      <h1>ORDER_DATE: {{this.order_date}}</h1>
+      <h1>ORDER_REC_DATE: {{this.order_rec}}</h1>
+      <h1>TOTAL RS.: {{this.total_amount}}</h1>
+      <h1>PRODUCT_ID: {{this.p_id}}</h1>
+      <h1>PRODUCT_NAME: {{this.p_name}}</h1>
+      <h1 id="mode">PAYMENT_MODE: {{this.payment_mode}}</h1>
+      {{#if this.order_rec}}
+      <form action="/mark-order-received" method="post">
+        <input type="hidden" name="or_id" value="{{this.or_id}}">
+        <button id="bt" type="submit">UPDATE DATE</button>
+      </form>
+      {{/if}}
+
+      
+
+      <div id="status">
+
+        <form id="updateStatusForm" onsubmit="updateOrderStatus(event)">
+          <input type="hidden" name="or_id" value="{{this.or_id}}">
+          <select name="status">
+            <option value="Ordered">Ordered</option>
+            <option value="Packed">Packed</option>
+            <option value="Shipped">Shipped</option>
+            <option value="Delivered">Delivered</option>
+          </select>
+          <button type="submit">Update Status</button>
+
+        </form>
+      </div>
+
+
+    </div>
+    {{/each}}
+  </div>
+
+
+
+
+</body>
+
+<script>
+  function updateOrderStatus(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const or_id = formData.get("or_id");
+    const status = formData.get("status");
+
+    fetch("/update-order-status", {
+      method: "POST",
+      body: JSON.stringify({ or_id, status }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Handle a successful update, e.g., refresh the page or show a message.
+          location.reload(); // Reload the page to reflect the updated status
+        } else {
+          // Handle the error, e.g., show an error message.
+          console.error("Error updating order status");
+        }
+      })
+      .catch((error) => {
+        console.error("Error updating order status:", error);
+      });
+  }
+
+
+</script>
+
+</html>

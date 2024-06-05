@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/user_login.css">
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="../image/logo.png" alt="">
+        </div>
+        <div class="text-center mt-4 name">
+            Register
+        </div>
+        {{#if error}}
+            <p style="color: red;  text-align:center; padding-top:10px;">{{ error }}</p>
+        {{/if}}
+        {{#if password}}
+            <p style="color: red;  text-align:center; padding-top:10px;">{{ error }}</p>
+        {{/if}}
+        <form action="" method="post" class="p-3 mt-3">
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="u_id" id="userName" placeholder="User ID" required>
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="u_name" id="inputText" placeholder="Username" required onkeyup="capitalizeFirstLetter()" pattern="[A-Za-z ]+">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="email" name="u_email" id="userName" placeholder="E-mail Id" required>
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="tel" name="u_mobile" id="userName" placeholder="Mobile No." required pattern="[6-9][0-9]{9}">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="u_address" id="userName" placeholder="Address" required>
+            </div>
+             <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="u_city" id="userName" placeholder="City" required pattern="[A-Za-z]+">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="pincode" id="userName" placeholder="Pincode" required>
+            </div>
+             <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="state" id="userName" placeholder="State" required pattern="[A-Za-z]+">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="u_password" id="pwd" placeholder="Password" required>
+            </div>
+             <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="u_con_pass" id="userName" placeholder="Confirm Password" required>
+            </div>
+            <button class="btn mt-3">Sign Up</button>
+        </form>
+        <div class="text-center fs-6 sign">
+            <a href="../user_login">Already Have Account?</a> or <a href="../user_login">Sign in</a>
+            <!--<a href="../user_login">Already Have Account? Sign in</a>-->
+        </div>
+        
+    </div>
+</body>
+
+<script>
+        function capitalizeFirstLetter() {
+            // Get the input element
+            const inputElement = document.getElementById("inputText");
+
+            // Get the current input value
+            let inputValue = inputElement.value;
+
+            // Check if there's at least one character
+            if (inputValue.length>0) {
+                // Capitalize the first letter
+                inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
+            }
+
+            // Update the input value with the capitalized text
+            inputElement.value = inputValue;
+        }
+    </script>
+</html>
