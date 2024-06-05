@@ -329,7 +329,7 @@ document.getElementById('pay').addEventListener('click', async () => {
         if (response.ok) {
             const orderData = await response.json();
             const razorpayOptions = {
-                key: 'rzp_test_k7kh7mgazaRlL6',
+                key: 'Your Key ID',
                 amount: orderData.amount,
                 currency: orderData.currency,
                 order_id: orderData.orderId,
