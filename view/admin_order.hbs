@@ -17,7 +17,7 @@
   <div class="sidebar">
     <div class="logo-details">
       <i class="bx bx-cart"></i>
-      <span class="logo_name">ShopiFy</span>
+      <span class="logo_name">BookStore</span>
     </div>
     <ul class="nav-links">
       <li>
@@ -29,7 +29,7 @@
       <li>
         <a href="../product">
           <i class='bx bx-box'></i>
-          <span class="links_name">Add_Item</span>
+          <span class="links_name">Add_Book</span>
         </a>
       </li>
       <li>
@@ -70,8 +70,8 @@
       <h1>ORDER_DATE: {{this.order_date}}</h1>
       <h1>ORDER_REC_DATE: {{this.order_rec}}</h1>
       <h1>TOTAL RS.: {{this.total_amount}}</h1>
-      <h1>PRODUCT_ID: {{this.p_id}}</h1>
-      <h1>PRODUCT_NAME: {{this.p_name}}</h1>
+      <h1>BOOK_ID: {{this.p_id}}</h1>
+      <h1>BOOK_NAME: {{this.p_name}}</h1>
       <h1 id="mode">PAYMENT_MODE: {{this.payment_mode}}</h1>
       {{#if this.order_rec}}
       <form action="/mark-order-received" method="post">
