@@ -5,6 +5,7 @@ const conn= mysql.createConnection({
   user: 'root',
   password: '',
   database: 'shopify' 
+  
 });
 
 
