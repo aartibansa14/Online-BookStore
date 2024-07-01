@@ -40,8 +40,7 @@ app.set("views", "./view");
 app.use(session({
     secret: 'your-secret-key', // Replace with a secure secret key
     resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: 60000 }
+    saveUninitialized: true
 }));
 
   
