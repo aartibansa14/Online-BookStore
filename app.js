@@ -38,7 +38,7 @@ app.set("views", "./view");
 
 // Route to render the user registration form
 app.use(session({
-    secret: 'your-secret-key', // Replace with a secure secret key
+    secret: 'your-secret-key', 
     resave: false,
     saveUninitialized: true
 }));

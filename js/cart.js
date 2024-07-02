@@ -333,7 +333,7 @@ document.getElementById('pay').addEventListener('click', async () => {
                 amount: orderData.amount,
                 currency: orderData.currency,
                 order_id: orderData.orderId,
-                name: 'ShopiFy',
+                name: 'BookStore',
                 description: 'Payment for Order',
                 handler: function (response) {
                     console.log('Payment successful:', response);
