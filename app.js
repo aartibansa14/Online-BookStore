@@ -3,6 +3,7 @@ const cors = require('cors');
 const express = require('express');
 const multer = require('multer'); // Import multer module for inserting image
 const session = require('express-session');
+const bcrypt = require('bcrypt')
 
 // Define a custom helper for equality check
 
@@ -47,9 +48,6 @@ app.use(session({
 
 
 
-app.get('/user_reg', (req, res) => {
-   res.render("user_reg");
-});
 
 
 
@@ -57,6 +55,12 @@ app.get('/user_reg', (req, res) => {
 
 
 let cart = [];
+
+
+app.get('/user_reg', (req, res) => {
+    res.render("user_reg");
+ });
+ 
 
 
 // Route to handle user registration form submission
@@ -107,6 +111,7 @@ app.post('/user_reg', (req, res) => {
 });
 
 
+
 // Route to render the user login form
 app.get('/user_login', (req, res) => {
    
@@ -114,7 +119,43 @@ app.get('/user_login', (req, res) => {
  });
 
 
- 
+ app.post('/user_login', (req, res) => {
+    const { u_email, u_password } = req.body;
+
+    // Check if the user exists in the database
+    const selectQuery = "SELECT * FROM user WHERE u_email = ? AND u_password = ?";
+
+    conn.query(selectQuery, [u_email, u_password], (err, results) => {
+        if (err) {
+            console.error("Error querying the database:", err);
+            res.status(500).send("Error querying the database");
+        } else {
+            if (results.length === 1) {
+                // User found, set the user's session with role
+                const user = results[0];
+                req.session.user = {
+                    u_id: user.u_id,
+                    u_name: user.u_name,
+                    u_email: user.u_email,
+                    u_mobile: user.u_mobile,
+                    u_address: user.u_address,
+                    u_city: user.u_city,
+                    pincode: user.pincode,
+                    state: user.state,
+                };
+                req.session.cart = []; // Initialize the user's cart
+                res.redirect('/index'); // Redirect to the appropriate route
+            } else {
+                // User not found or password is incorrect
+                res.render('user_login', { error: 'Invalid email or password' });
+            }
+            
+        }
+    });
+});
+
+
+
 
 
  app.post('/product', upload.single('p_image'), (req, res) => {
@@ -147,17 +188,6 @@ app.get('/user_login', (req, res) => {
 });
 
  
- 
- 
- function generateRandomId() {
-    return Math.floor(Math.random() * 1000000); // Change the range as needed
-}
-
-
-
-
-
-
 app.get('/product', (req, res) => {
     const qry = "SELECT  p_id,p_name, p_price, p_del_price,p_image,cate FROM product"; // Modify the query to select the desired columns
     conn.query(qry, (err, results) => {
@@ -175,6 +205,12 @@ app.get('/product', (req, res) => {
           }
     });
   });
+ 
+ 
+ function generateRandomId() {
+    return Math.floor(Math.random() * 1000000); // Change the range as needed
+}
+
 
 
 
@@ -303,48 +339,6 @@ app.post('/confirm-payment', async (req, res) => {
 
 
 });
-
-
-
-
-
-app.post('/user_login', (req, res) => {
-    const { u_email, u_password } = req.body;
-
-    // Check if the user exists in the database
-    const selectQuery = "SELECT * FROM user WHERE u_email = ? AND u_password = ?";
-
-    conn.query(selectQuery, [u_email, u_password], (err, results) => {
-        if (err) {
-            console.error("Error querying the database:", err);
-            res.status(500).send("Error querying the database");
-        } else {
-            if (results.length === 1) {
-                // User found, set the user's session with role
-                const user = results[0];
-                req.session.user = {
-                    u_id: user.u_id,
-                    u_name: user.u_name,
-                    u_email: user.u_email,
-                    u_mobile: user.u_mobile,
-                    u_address: user.u_address,
-                    u_city: user.u_city,
-                    pincode: user.pincode,
-                    state: user.state,
-                };
-                req.session.cart = []; // Initialize the user's cart
-                res.redirect('/index'); // Redirect to the appropriate route
-            } else {
-                // User not found or password is incorrect
-                res.render('user_login', { error: 'Invalid email or password' });
-            }
-            
-        }
-    });
-});
-
-
-
 
 
 app.post('/cart', (req, res) => {
